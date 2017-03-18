@@ -1,21 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
+import Expo, { Constants } from 'expo';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hi. Welcome to React Native MeetUp Tirol!</Text>
-      </View>
-    );
-  }
+
+import RootNavigation from './src/navigation/RootNavigation';
+
+export default class App extends Component {
+    render() {
+        return (
+            <RootNavigation />
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: Constants.statusBarHeight,
+        backgroundColor: '#ecf0f1',
+    }
+})
+
+
+
+Expo.registerRootComponent(App);
